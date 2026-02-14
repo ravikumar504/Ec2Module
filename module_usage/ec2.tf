@@ -1,5 +1,12 @@
 module "ec2" {
-    source = "../terraform-aws-ec2"
-    sg_id = "sg-0e978039cdb6c3057"
-    instance_type = "t3.small"
+    source = "../module"
+    
+    subnet_id  =    var.sn_id
+    public_key   =    var.pub_key
+    
+    security_group_id = var.sg_id
+
+    root_volume_size = var.volume_size
+    root_volume_type = var.volume_type
+
 }
